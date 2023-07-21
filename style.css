@@ -1,0 +1,392 @@
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-primary-variant: #111e88;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dceleb;
+  --color-dark: #363949;
+  --color-light: rgb(132, 139, 200, 0.18);
+  --color-white: #fff;
+  --color-dark-variant: #677483;
+  --color-background: #f6f6f9;
+  
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  outline: none; 
+}
+.dark-theme-variables {
+  --color-dark: #edeffd;
+  --color-light: rgb(0, 0, 0, 0.4);
+  --color-white: #202528;
+  --color-dark-variant: #a3bdcc;
+  --color-background: #181a1e;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+body {
+  height: 100vh;
+  font-family: poppins, sans-serif;
+  font-size: 0.88rem;
+  background-color: var(--color-background); 
+}
+.warning {
+  color: var(--color-warning);
+}
+.primary {
+  color: var(--color-primary);
+}
+.success {
+  color: var(--color-success);
+}
+.danger {
+  color: var(--color-danger);
+}
+h1 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color-dark);
+}
+h2 {
+  font-size: 1.4rem;
+  color: var(--color-dark);
+}
+h3 {
+  font-size: 0.87rem;
+  color: var(--color-dark);
+}
+p {
+  color: var(--color-dark);
+}
+th {
+  color: var(--color-dark);
+}
+img {
+  border-radius: 50%; 
+  width: 30px; 
+}
+.dashboard {
+  display: flex;
+  background-color: var(--color-background); 
+  height: 100vh; 
+}
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  aside {
+    display: none; 
+  }
+  .content {
+    padding: 20px; 
+  }
+  .insights {
+    flex-direction: column; 
+  }
+  .sales {
+    width: 100%; 
+  }
+  .middle {
+    justify-content: space-between; 
+  }
+  .switch {
+    top: 35px;
+    right: 35px; 
+    position: absolute; 
+  }
+  .sales-analytics {
+    padding-bottom: 30px; 
+  }
+}
+aside {
+  width: 23%;
+  height: 100vh; 
+  padding: 15px; 
+  position: relative; 
+  box-shadow: 0 0 15px #ddd;
+}
+aside .logo {
+  font-size: 30px; 
+  font-weight: 600; 
+  color: var(--color-dark);
+  margin-bottom: 30px; 
+  display: block; 
+  text-align: center; 
+}
+aside li a {
+  display: block; 
+  display: flex;
+  align-items: center; 
+  margin-left: 2rem;
+  color: var(--color-dark);
+  font-size: 15px;
+  gap: 1rem;
+  height: 3.3rem; 
+  position: relative; 
+}
+aside li:hover {
+  transform: translateX(10px);
+  transition: 0.3s;
+}
+aside li a span {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: 35px;
+  height: 25px; 
+  border-radius: 10px;  
+  color: var(--color-white);
+  position: absolute; 
+  background-color: var(--color-danger); 
+  right: -5px; 
+}
+aside li a ion-icon{
+  font-size: 18px;
+}
+aside li.active {
+  background-color: var(--color-light); 
+}
+aside li a.active {
+  color: var(--color-primary); 
+}
+aside li a.active::before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background-color: var(--color-primary);
+  position: absolute;
+  left: -2rem; 
+}
+aside li:last-child {
+  position: absolute;
+  bottom: 20px;
+  left: 10px; 
+}
+.content {
+  padding-top: 30px;
+  padding-left: 15px; 
+}
+h1 {
+  margin-bottom: 1rem; 
+  font-weight: 800; 
+}
+.content .date {
+  background: var(--color-light);
+  border-radius: 0.4rem;
+  display: inline-block;
+  padding: 0.5rem 1.6rem; 
+  margin-bottom: 2rem; 
+}
+.content .date input[type="date"] {
+  background: transparent; 
+  color: var(--color-dark);
+}
+.content .insights {
+  display: flex; 
+  gap: 15px; 
+  align-items: center; 
+}
+.content .sales {
+  border-radius: 0.8rem;  
+  box-shadow: 0 0 15px #ddd;
+  padding: 15px 20px;
+  transition: 0.3s;
+  background-color: var(--color-white); 
+}
+.content .sales:hover {
+  box-shadow: none; 
+}
+.content .sales ion-icon {
+  font-size: 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: .5rem;
+  border-radius: 50%; 
+}
+.content .sales:nth-child(2) ion-icon {
+  background-color: var(--color-danger); 
+}
+.content .sales:nth-child(3) ion-icon {
+  background-color: var(--color-success); 
+}
+.content .sales .middle {
+  display: flex;
+  align-items: center; 
+  gap: 20px; 
+}
+.sales .middle .left h3 {
+  margin-bottom: 0.5rem; 
+}
+.sales .progress {
+  position: relative; 
+}
+.sales .progress svg {
+  width: 6rem;
+  height: 6rem; 
+}
+.sales .progress circle {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px, 5px); 
+  stroke-dasharray: 200;
+  stroke-dashoffset: -30;
+  position: relative; 
+}
+.sales:nth-child(2) .progress circle {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 20;
+}
+.sales:nth-child(3) .progress circle {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 35;
+}
+.sales .progress .number {
+  top: 35%;
+  left: 35%; 
+  transform: translate(); 
+  color: var(--color-dark);
+  font-weight: 800; 
+  position: absolute; 
+}
+.text-muted {
+  color: #777;
+}
+.recent-orders {
+  margin-top: 2rem; 
+}
+.recent-orders h2 {
+  margin-bottom: 0.8rem; 
+}
+.recent-orders table {
+  width: 100%; 
+  background-color: var(--color-white); 
+  text-align: center;
+  border-radius: 14px;  
+  padding: 20px; 
+  box-shadow: var(--box-shadow);
+}
+.recent-orders table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);  
+  color: var(--color-dark-variant); 
+}
+.recent-orders table tbody td:last-child {
+  color: var(--color-primary);
+}
+.recent-orders table tbody td:nth-of-type(4) {
+  color: var(--color-warning);
+}
+.recent-orders table tbody tr:last-child td {
+  border: none; 
+}
+.recent-orders a {
+  text-align: center;
+  display: block;
+  margin: 1rem auto; 
+  color: var(--color-primary);
+}
+.right {
+  margin-top: 0px; 
+  padding: 30px 15px 0; 
+}
+.switch {
+  margin-bottom: 2rem; 
+  display: block; 
+  text-align: center; 
+}
+.switch button {
+  width: 40px; 
+  font-size: 20px; 
+  height: 30px; 
+  padding: 3px 8px; 
+  border-radius: 5px; 
+}
+.switch button.active {
+  background-color: var(--color-primary); 
+  color: var(--color-white);
+}
+.switch button ion-icon {
+  background-color: transparent; 
+}
+.right .recent-updates {
+  margin-top: 1rem; 
+}
+.right .recent-updates h2{
+  margin-bottom: 0.8rem; 
+}
+.right .recent-updates .updates {
+  background-color: var(--color-white);
+  padding: 20px; 
+  border-radius: 14px; 
+  box-shadow: var(--box-shadow); 
+  width: fit-content;
+  display: block;
+}
+.right .updates .update {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px; 
+  gap: 10px;
+}
+.sales-analytics {
+  margin-top: 2.5rem; 
+}
+.sales-analytics h2 {
+  margin-bottom: 1rem;  
+}
+.sales-analytics .item-online,
+.sales-analytics .item-offline,
+.sales-analytics .item-customers {
+  display: flex; 
+  align-items: center;
+  background-color: var(--color-white);
+  margin-bottom: 8px; 
+  padding: 10px 15px; 
+  border-radius: 14px; 
+}
+.sales-analytics ion-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%; 
+  margin-right: 10px; 
+  padding: 8px; 
+}
+.sales-analytics .item-online ion-icon {
+  background-color: var(--color-primary); 
+}
+.sales-analytics .item-offline ion-icon {
+  background-color: var(--color-danger); 
+}
+.sales-analytics .item-customers ion-icon {
+  background-color: var(--color-success); 
+}
+.sales-analytics .right {
+  padding: 0; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  flex: 1; 
+  gap: 10px; 
+}
+.sales-analytics button {
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 10px 0; 
+  border: 3px dashed var(--color-primary); 
+  margin-top: 1rem; 
+  border-radius: 14px;  
+  background-color: transparent; 
+  color: var(--color-dark-variant);
+}
